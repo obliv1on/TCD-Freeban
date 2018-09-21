@@ -1,0 +1,91 @@
+$bg: #313542;
+$darker: #3A3B40;
+$text: white;
+$F3: #F3F3F3;
+$blurple: #7686DD;
+* {
+    font-family: 'Lucida Console', sans-serif;
+    color: $darker;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color:$bg;
+    overflow: hidden;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    &:after {
+        position: absolute;
+        top:0px;
+        left:0px;
+        right:0px;
+        bottom:0px;
+        z-index:1000;
+        content: '';
+        background-size:50% 2px;
+        opacity:0.3;
+        pointer-events: none;
+        background-image: url('crt-screen.gif');
+    }
+
+    #card {
+        max-width: 860px;
+        width: 720px;
+        background-color: $F3;
+        border-radius: 3px;
+        margin: 0 auto;
+        overflow: hidden;
+        z-index: 10;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
+        border: 2px dashed;
+        box-shadow: 0 0 3px #000;
+        #card-top {
+            display: flex;
+            flex-flow: row nowrap;
+            box-shadow: 0 1px 6px #000;
+            height: 130px;
+            z-index: 2;
+            h1 {
+                margin: auto 1em;
+            }
+            img {
+                width: auto;
+                height: 100%;
+            }
+        }
+
+        #card-middle {
+            padding: 2em 2em;
+            background-color: $darker;
+            box-shadow: 0 0 3px #000;
+            z-index: 3;
+            * {
+                color: $F3;
+            }
+        }
+
+        #card-bottom {
+            background-color: $blurple;
+            height: 80px;
+            color: $F3;
+            font-size: 1.1em;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: center;
+            z-index: 2;
+            * {
+                color: $F3;
+                
+            }
+            p {
+                margin: 0 auto;
+            }
+        }
+    }
+}
